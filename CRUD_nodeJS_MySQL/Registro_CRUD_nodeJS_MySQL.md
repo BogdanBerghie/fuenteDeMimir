@@ -17,7 +17,7 @@
     >npm install express mysql express-myconnection morgan ejs
    
    >1. ###### Bonus
-        >* **[nodemon](https://nodemon.io/)**: Este es el plugin de la vagueza, se encargara de reiniciar el server cadavez que haya cambios :smirk:.
+        >* **[nodemon](https://nodemon.io)**: Este es el plugin de la vagueza, se encargara de reiniciar el server cadavez que haya cambios.
         >    * PD: Instalo **nodemon** con *-D* para que no se instale como dependencia esencial si no  como ayuda al desarollo (Esto se vera reflejado en el archivho de packages.json aparecera como devDependencies).
         >
         >>npm install nodemon -D 
@@ -138,3 +138,43 @@
             //Cada vez que un usuario llegue a la ruta principal "/" ejecuta estas rutas llamadas "userRoutes"
             app.use('/', userRoute);
             ```
+    6. Este así ha quedado el archivo main del servidor *server_main.js*
+        ```js
+        const express = require('express');
+        const path = require('path');
+        const morgan = require('morgan');
+        const mysql = require('mysql');
+        const myConnection = require('express-myconnection');
+
+        const app = express();
+
+        //IMPORTING ROUTES
+        const userRoute = require('./routes/user');
+
+        //EXPRESS SETTINGS 
+        app.set('port', process.env.PORT || 3000);
+        app.set('view engine', 'ejs');
+        app.set('views', path.join(__dirname, 'views'));
+
+        //MIDDLEWARES
+        app.use(morgan('dev'));
+        app.use(myConnection(mysql, {
+            host: 'localhost',
+            user: 'root',
+            password: 'root',
+            port: 3306,
+            database: 'crud_nodejs_mysql'
+        }, 'single'));
+
+        //ROUTES
+        app.use('/', userRoute);
+
+        //STATIC FILES
+        app.use(express.static(path.join(__dirname, 'public')));
+
+        //STARTING SERVER
+        app.listen(app.get('port'), () => {
+            console.log('escuchando en el puerto 3000');
+        });
+        ```
+        
