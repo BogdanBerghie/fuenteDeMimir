@@ -179,6 +179,6 @@
         });
         ```
 4. ###### Operaciones CRUD:
-    Lo primero será reacer el metodo *list* de *userController.js* que actualmente devuelve un helloWorld.
+    Lo primero será reacer el metodo *list* de *userController.js* que actualmente devuelve un helloWorld. Pero antes hay que definir su ruta en *routes/user.js*
     
         
