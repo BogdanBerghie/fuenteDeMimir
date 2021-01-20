@@ -13,6 +13,7 @@
     * **[express-myconnection](https://www.npmjs.com/package/express-myconnection)**:  Con la siguiente dependencia se podrá usar la conexión de *mysql* en los middlewars de *express* para tener a mano la conexión de mysql mientras picas codigo con ello podrás acceder a las operaciones CRUD almacenadas.
     * **[morgan](https://www.npmjs.com/package/morgan)**: Permite ver las peticiones al servidor.
     * **[ejs](https://ejs.co/)**: Motor de plantillas, podrás enviar htmls al servidor previamente procesados por el servidor, así uno podra ejecurar condicioneales, bucles... para utilizar logica de programación para diseñar el html y ya luego procesarlo en el servidor y enviarlo al cliente (creo ? :sweat_smile:).
+        **IMPORTANTE: si vas a usar Visual Studio Code INSTALAR PLUGIN "EJS language support"**
 
     >npm install express mysql express-myconnection morgan ejs
    
@@ -177,4 +178,7 @@
             console.log('escuchando en el puerto 3000');
         });
         ```
+4. ###### Operaciones CRUD:
+    Lo primero será reacer el metodo *list* de *userController.js* que actualmente devuelve un helloWorld.
+    
         

@@ -11,8 +11,8 @@ const userRoute = require('./routes/user');
 
 //EXPRESS SETTINGS 
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 //MIDDLEWARES
 app.use(morgan('dev'));
@@ -23,6 +23,7 @@ app.use(myConnection(mysql, {
     port: 3306,
     database: 'crud_nodejs_mysql'
 }, 'single'));
+app.use(express.urlencoded({ extended: false }));
 
 //ROUTES
 app.use('/', userRoute);
@@ -32,5 +33,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //STARTING SERVER
 app.listen(app.get('port'), () => {
-    console.log('escuchando en el puerto 3000');
+    console.log(`escuchando en el puerto ${app.get('port')}`);
 });
