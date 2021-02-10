@@ -7,3 +7,4 @@ Descargar el [instalador](https://nuget.flexygo.com/setup/CRMInstaller.zip) e in
 + Contraseña del usuario 
 + Por último el nombre de la BBDD
 ![Configuracion de la conexión](/ERP_CRM\CRM_FlexyGo\Documentacion\img\Screenshot_2.png "Configuracion de la conexión")
+>El instalador puede crear una BBDD si no existe, pero es recomendable que se haya creado de antemano.
