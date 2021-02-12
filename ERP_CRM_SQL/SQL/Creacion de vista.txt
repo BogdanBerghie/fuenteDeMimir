@@ -1,0 +1,48 @@
+USE [SERINFOR]
+GO
+
+/****** Object:  View [dbo].[vClientes_TPV]    Script Date: 12/02/2021 9:54:30 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+  
+  
+  
+create view [dbo].[vClientes_TPV_pers]   
+AS  
+-- =============================================  
+-- #AUTOR:   
+--    CEESI  
+-- #NAME:  
+---    vClientes_TPV  
+-- #CREATION:   
+--      
+-- #CLASIFICATION:  
+--    002-GESTION COMPRAS y VENTAS  
+-- #DESCRIPTION:  
+--    Vista de clientes estándar para TPV  
+-- #OBSERVATIONS:  
+--      
+-- #CHANGES:   
+--      
+-- #EXAMPLE:   
+--    SELECT * FROM vClientes_TPV  
+-- =============================================  
+SELECT Cli.*,  
+  Eco.FormaPago, 
+  Eco.IdLista, 
+  Eco.Cuenta,  
+  Cli.Cliente + CASE WHEN Cli.NIF IS NOT NULL THEN ' (' + Cli.NIF + ')' ELSE '' END AS ClienteNIF, 
+  pcc.IdPedido -- para combos de búsqueda TPV_TechFun  
+ FROM Clientes_Datos Cli  
+  INNER JOIN Clientes_Datos_Economicos Eco ON Cli.IdCliente=Eco.IdCliente  
+  left join Pedidos_Cli_Cabecera pcc on pcc.IdCliente=cli.IdCliente  -- MCV 11-01 para forzar orden
+ WHERE Cli.IdTipo >= 0  -- filtrar los potenciales
+ --order by pcc.IdPedido desc
+GO
+
+
+zpermisos vClientes_TPV_pers
