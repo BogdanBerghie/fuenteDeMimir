@@ -1,7 +1,9 @@
 # Añadir/modificar campos de filtrado.
 ###### 1. Preparar la vista.
-Lo primero será identificar la vista y visualizarla a modificar. 
-![Modificar vista](/ERP_CRM_SQL\ERP\añadirCampoFiltro\img\Screenshot_1.png "Modificar vista")
+Lo primero será identificar la vista a modificar. 
+
+![Modificar vista](/ERP_CRM_SQL\ERP\añadirCampoFiltro\img\Screenshot_1.png?raw=true)
+
 ###### 2. Añadir el nuevo campo requerido a la visti con un left join.
 Como explicacion rapida el nuevo dato que necesitemos lo añadimos a la vista mediante un left join 
 ```sql
@@ -31,5 +33,7 @@ GO
 ###### 3. Añadir campo a la aplicación de ERP
 
 Ya solo quedaría ir a la palicación de ***Aministrador de ERP*** y declarar el nuevo campo.
-![Añadir campo](/ERP_CRM_SQL\ERP\añadirCampoFiltro\img\Screenshot_2.png "añadir campo")
+
+![Añadir campo](/ERP_CRM_SQL\ERP\añadirCampoFiltro\img\Screenshot_2.png?raw=true "añadir campo")
+
 > La primera columna hace referencia al dato de la BBDD **Se tiene que llamar igual que en la BBDD** y la segunda columna será como se verá en la aplicación así que puedes llamaro como quieras. 

@@ -58,4 +58,4 @@ a
 
 >Select * from VDLG_Facturas_Cli_Cab_Col_pers
 
-![Redefinir la consulta](/ERP_CRM_SQL\SQL\CreaciónDeVista\img\Screenshot_1.png)
+![Redefinir la consulta](/ERP_CRM_SQL\SQL\CreaciónDeVista\img\Screenshot_1.png?raw=true)
