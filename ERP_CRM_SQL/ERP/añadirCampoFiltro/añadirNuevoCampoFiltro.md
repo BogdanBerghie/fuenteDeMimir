@@ -2,7 +2,7 @@
 ###### 1. Preparar la vista.
 Lo primero será identificar la vista a modificar. 
 
-![Modificar vista](img\Screenshot_1.png)
+![Modificar vista](img/Screenshot_1.png)
 
 ###### 2. Añadir el nuevo campo requerido a la visti con un left join.
 Como explicacion rapida el nuevo dato que necesitemos lo añadimos a la vista mediante un left join 
@@ -34,6 +34,6 @@ GO
 
 Ya solo quedaría ir a la palicación de ***Aministrador de ERP*** y declarar el nuevo campo.
 
-![Añadir campo](img\Screenshot_2.png "añadir campo")
+![Añadir campo](img/Screenshot_2.png "añadir campo")
 
 > La primera columna hace referencia al dato de la BBDD **Se tiene que llamar igual que en la BBDD** y la segunda columna será como se verá en la aplicación así que puedes llamaro como quieras. 
