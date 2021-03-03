@@ -9,6 +9,7 @@ Sub Initialize()
     TipoInstalaciones
     Notas
     combotipo
+    combotipo_borrame
     
     
     gForm.Controls("Pers_Combo_tipoparte").ActivarScripts = True
@@ -55,6 +56,39 @@ Sub combotipo
        .move 6180,510,3500,300
        .AplicaEstilo 
        .TabStop=True
+       .TabIndex = 25
+       .necesario = True
+  End With
+
+End Sub
+
+Sub combotipo_borrame
+
+  Set lControl = gForm.Controls.Add("AhoraOCX.ComboUsuario", "Pers_Combo_tipoparte_borrame", Gform.controls("FraDatos"))
+  With lControl 
+  
+       .C1Nombre = "pers_tipo"
+       .C1TipoDato = 8
+       .C1Anchura = 2000
+       .C2Nombre = "tipo"
+       .C2TipoDato = 8
+       .C2Anchura = 2000
+       .CActiva = 2
+       .NColumnas = 2
+       .Descripcion = "select pers_tipo,pers_tipo as tipo from Conf_Partes_pers_tipo"
+       .Formato = "Mayusculas y Minusculas"
+       .TipoDato = "String"
+       .ObjOrigen = "EObjeto"
+       .ObjPOrigen = "pers_tipo"
+       .visible = True
+       .CaptionVisible = True
+       .CaptionControl = "Hello there"
+       .CaptionWidth = 1800
+       .Enabled = True
+       .CaptionLink = True
+       .move 10000,510,3500, 300    '5600,200,9000,2000
+       .AplicaEstilo 
+       .TabStop = True
        .TabIndex = 25
        .necesario = True
   End With

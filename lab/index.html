@@ -1,0 +1,62 @@
+<div class="hidden-s"><ul class="arrowtab">
+  <li data-value="0" class="{{IdEstado|switch:[0:active,else:]}}" onclick="flexygo.crm.crmOportunidad_ActualizaEstado($(this),{{IdOportunidad}},{{IdEstado}},0)"> <span>{{translate|Nueva gestión}}</span></li>
+  <li data-value="1" class="{{IdEstado|switch:[1:active,else:]}}" onclick="flexygo.crm.crmOportunidad_ActualizaEstado($(this),{{IdOportunidad}},{{IdEstado}},1)"> <span>{{translate|Preparando presupuesto}}</span></li>
+  <li data-value="2" class="{{IdEstado|switch:[2:active,else:]}}" onclick="flexygo.crm.crmOportunidad_ActualizaEstado($(this),{{IdOportunidad}},{{IdEstado}},2)" class="selected" > <span>{{translate|Presupuesto enviado}}</span></li>
+  <li data-value="3" class="{{IdEstado|switch:[3:active,else:]}}" onclick="flexygo.crm.crmOportunidad_ActualizaEstado($(this),{{IdOportunidad}},{{IdEstado}},3)"> <span>{{translate|Recibido por cliente}}</span></li>
+  <li data-value="5" class="{{IdEstado|switch:[-1:active lost,4:active won ,else:]}}" onclick="flexygo.crm.crmOportunidad_ActualizaEstado($(this),{{IdOportunidad}},{{IdEstado}},5)"> <span>{{IdEstado|switch:[-1:{{translate|Perdida}},4:{{translate|Ganada}},else:{{translate|Finalizar}}]}}</span></li>
+  </ul></div>
+
+<div class="padding-m">
+	<div class="row">
+    	<div class="col-1 col-l-1 col-m-1 hidden-s text-center">
+          <i class="fa fa-sun-o icon-3x icon-margin-right {{ColorCSS}}" alt="{{IdOportunidad}}" ></i>
+           <span class="{{ProbabilidadExito|isnull:hidden}} hidden-s"><br><b>{{ProbabilidadExito}}</b><i class="fa fa-percent"></i></span>
+      	</div>	    
+      	<div class="col-10 col-l-10 col-m-10 col-s-10" >
+          <div class="col-8 col-l-8 col-m-8  col-s-12">
+           <h4>
+             <strong title="{{Descrip}}">{{Descrip|string:50}} </strong> <small>{{Estado}}  <span class="{{IdMotivo|bool:txt-danger ,hidden}}">{{MotivoPerdida}}</span></small><br>	
+             <flx-navbutton type="openpage" pagetypeid="view" objectname="crm_Cliente" objectwhere="(Clientes_Datos.IdCliente='{{IdCliente}}')" defaults="" targetid="current" excludehist="false">
+               <span class="clickable hoverBold">{{Cliente}}</span> <span class="{{Bloqueado|bool:txt-danger,hidden}}">{{translate|(Bloqueado)}}</span>
+             </flx-navbutton><br/>
+           </h4>
+          </div>
+          <div class="col-4 col-l-4 col-m-4 col-s-12">
+               <h4 class="txt-warning pull-right">
+             	<i class="{{crmCoinIcon}} icon-margin-right" title ="{{IdOferta|isnull: {{translate|No address}}, {{translate|Adress found}}}}"></i><strong>{{ImporteProbable|decimal:2}}</strong>               		
+             </h4>
+          </div>
+           <div class="col-5 col-l-5 col-m-12 col-s-12">
+              <ul class="list-unstyled size-s margin-top-s ">
+             	<li class=" {{Caducada|bool:txt-danger}}"><i class="flx-icon icon-calendar-month icon-margin-right" title="{{translate|Fecha est. Cierre o Cierre}}"></i>{{translate|Fecha}} {{IdEstado|switch:[-1:{{translate|de Cierre}},4:{{translate|de Cierre}},else:{{translate|estimada}}]}}: <strong>{{IdEstado|switch:[-1:{{FechaCierre|date:L}},4:{{FechaCierre|date:L}},else:{{FechaEstamadCierre|date:L}}]}}</strong></li>
+                 <li><i class="flx-icon icon-man-5 icon-margin-right" title="{{translate|Asignado a}}"></i>{{translate|Asignado a:}} {{AsignadoA|isnull:{{translate|Sin asignar}}}}</li>
+             </ul>
+           </div>
+           <div class="col-4 col-l-4 col-m-5 col-s-12">
+           <ul class="list-unstyled size-s  margin-top-s">
+             <li><i class="flx-icon icon-calendar-month icon-margin-right" title="{{translate|Fecha alta}}"></i>{{translate|Fecha Alta:}} {{FechaCreacion|date:L}}</li>
+             <li><i class="flx-icon icon-man-5 icon-margin-right" title="{{translate|Supervisado por}}"></i>{{translate|Supervisor:}} {{PerteneceA|isnull:{{translate|Sin asignar}}}}</li>
+      	   </ul>
+    	  </div>
+          <div class="col-3 col-l-3 col-m-5 col-s-12">
+           <ul class="list-unstyled size-s margin-top-s">
+ 			 <li><i class = "flx-icon icon-bullet-list-1" title="{{translate|Tipo de oportunidad}}"></i> {{translate|Tipo:}} {{Tipo|isnull:{{translate|Sin tipo}}}}</li>
+             <flx-navbutton type="openpage" pagetypeid="list" objectname="crm_Gastos" objectwhere="(crm_Gastos.IdGasto IN (Select distinct IdGasto from crm_Gastos_Lineas where IdOportunidad='{{IdOportunidad}}'))" defaults="" targetid="current" excludehist="false">
+             	<li class="clickable hoverBold"><i class = "flx-icon icon-money" title="{{translate|Gastos}}"></i> {{translate|Gastos:}} {{TotalGastos|decimal:2}} {{crmCoinSymbol}}</li>
+             </flx-navbutton>  
+           </ul>
+         </div>
+    	</div>
+    	<div class="col-1 col-l-1 col-m-1 col-s-1 text-center">
+           <div class="padding-top-l">
+               <flx-navbutton type="execprocess" processname="crm_Oportunidad_seguir" objectname="crm_Oportunidad" objectwhere="(CRM_Oportunidades.IdOportunidad={{IdOportunidad}})" defaults="" targetid="current" excludehist="false">
+	           <i class="icon-margin-left icon-lg {{Siguiendo|bool:txt-warning flx-icon icon-star ,text-muted flx-icon icon-star-2}} clickable" title="{{translate|Seguir}}"></i>
+               </flx-navbutton>
+ 	      </div>
+       </div>
+       <div class="padL-1 col-11">
+         <small>{{Notas}}</small>
+      </div>
+  </div>
+</div>
+

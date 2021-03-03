@@ -1,0 +1,59 @@
+<div class="col-12 col-l-12 col-m-12 col-s-12 nopadding mod-expand">
+    <div class="row row-line ">
+        <div class="col-1 col-l-1 hidden-m hidden-s text-left">
+            <span tittle="{{translate|Seleccionar}}">{{bagbutton}}</span>
+            {{objectmenu}}
+        </div>
+
+        <flx-navbutton type="openpage" pagetypeid="view" objectname="crm_Oportunidad"
+            objectwhere="(CRM_Oportunidades.IdOportunidad={{IdOportunidad}})" defaults="" targetid="current"
+            excludehist="false">
+            <div class="col-2 col-l-3 col-m-12 col-s-12 size-s clickable">
+                <i class="flx-icon {{Nivel|bool:icon-delegations-2,icon-man}} icon-margin-right"></i><strong
+                    class="{{Bloqueado|bool:txt-danger}}">{{Cliente}}</strong><span
+                    class="{{Bloqueado|bool:txt-danger,hidden}}">{{translate|(Bloqueado)}}</span><br />
+                <div class="ellipsis" title="{{Descrip}}"><i
+                        class="fa fa-sun-o icon-margin-right"></i>{{Descrip|string:50}}</div>
+            </div>
+        </flx-navbutton>
+        <div class="col-1 col-l-1 col-m-4 col-s-6 {{ColorCSS}} {{IdMotivo|bool:,margin-top-s}}">
+            {{Estado}}
+            <flx-navbutton type="execprocess" processname="crm_Oportunidad_seguir" objectname="crm_Oportunidad"
+                objectwhere="(CRM_Oportunidades.IdOportunidad={{IdOportunidad}})" defaults="" targetid="current"
+                excludehist="false" showprogress="false">
+                <i class="{{Siguiendo|bool:txt-warning flx-icon icon-star ,text-muted flx-icon icon-star-2}} pull-right margin-top-s clickable"
+                    title="{{Siguiendo|bool:{{translate|Dejar de seguir}},{{translate|Seguir}}}}"></i>
+            </flx-navbutton>
+            <span class="{{IdMotivo|bool:txt-danger size-s ellipsis,hidden}}"><br>{{MotivoPerdida}}</span>
+        </div>
+
+        <div class="col-2 col-l-2 col-m-4 col-s-6 text-right margin-top-s">
+            <span
+                class="pull-left margin-top-s {{ProbabilidadExito|isnull:hidden}} hidden-s"><b>{{ProbabilidadExito}}</b><i
+                    class="fa fa-percent"></i></span><b>{{ImporteProbable|decimal:2}}</b><i
+                class="{{crmCoinIcon}} icon-margin-right "></i>
+        </div>
+
+        <div class="col-2 col-l-2 hidden-m hidden-s size-s">
+            <div class="ellipsis">
+                <i class="flx-icon icon-calendar-multi icon-margin-right"
+                    title="{{translate|Creada}}"></i>{{FechaCreacion|date:L}} <span
+                    class="pull-right margin-top-s">{{Tiempo}} d <i
+                        class="flx-icon icon-clock-3 padding-s icon-margin-right icon-margin-left"></i></span><br>
+                <i class="flx-icon icon-calendar-month icon-margin-right {{Caducada|bool:txt-danger}} "
+                    title="{{IdEstado|switch:[-1:{{translate|Perdida}},4:{{translate|Ganada}},else:{{translate|Estimada}}]}}"></i>{{IdEstado|switch:[-1:{{FechaCierre|date:L}},4:{{FechaCierre|date:L}},else:{{FechaEstamadCierre|date:L}}]}}
+            </div>
+        </div>
+        <div class="col-2 col-l-3 col-m-4 hidden-s ">
+            <div class="ellipsis" title="{{AsignadoA}}"> <img class="img-responsive img-circle icon-margin-right inline"
+                    src="{{Foto|isnull:./img/Avatars/avatar_blank.png,{{flxPath|crm_Empleado|Foto|url}}}}"
+                    style="max-height:30px;margin-top:6px" title="{{Nombre}}" /> {{AsignadoA}}</div>
+        </div>
+
+        <div class="col-2 hidden-l hidden-m hidden-s margin-top-s">
+            <i class="flx-icon icon-bullet-tics-list  icon-margin-right "></i>{{UltimaActuacion|isnull:{{translate|Sin
+            informar}},{{UltimaActuacion|date:LL}}}}
+        </div>
+
+    </div>
+</div>
