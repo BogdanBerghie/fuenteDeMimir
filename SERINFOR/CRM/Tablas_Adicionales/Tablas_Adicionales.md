@@ -21,5 +21,5 @@ Añadir una nueva tabla adicional
 Debería quedar algo así:
 ![Resultado Final](img/captura2.png "Resultado Final")
 
-Una vez tengamos configurados todos los campos, pulsamos el botón **Guardar**. Si todos los cambios se han guardado correctamente, podremos añadir campos de la tabla que hemos añadido en el objeto.
+Una vez tengamos configurados todos los campos, pulsaremos el botón **Guardar**. Si todos los cambios se han guardado correctamente, podremos añadir campos de la tabla que hemos añadido en el objeto.
 
