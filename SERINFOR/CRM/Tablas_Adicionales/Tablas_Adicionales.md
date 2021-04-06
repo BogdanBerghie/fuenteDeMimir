@@ -9,6 +9,8 @@ Una vez tengamos claro cual es la tabla adicional que queremos relacionar en el 
 
 
 Añadir una nueva tabla adicional
+
+
 ![Añadir una tabla adicional](img/captura1.png "Añadir una tabla adicional")
 
 ###### Datos a introducir
@@ -19,6 +21,8 @@ Añadir una nueva tabla adicional
 + **Metodos de Modificación**: Tanto la inserción, la actualización y el borrado serán "**Standard**".
 
 Debería quedar algo así:
+
+
 ![Resultado Final](img/captura2.png "Resultado Final")
 
 Una vez tengamos configurados todos los campos, pulsaremos el botón **Guardar**. Si todos los cambios se han guardado correctamente, podremos añadir campos de la tabla que hemos añadido en el objeto.
