@@ -8,12 +8,15 @@ Seleccionar el Administrador de Dependencias en la parte superior a la derecha d
 
 ###### 3. Relacionar un desplegable con dependencias. 
 + Seleccionar la pestaña "Desplegable".
+
+
 ![Seleccionar la pestaña "Desplegable"](img/Pestaña_Desplegable.png "Seleccionar la pestaña \"Desplegable\"")
 + Seleecionar la propiedad que quieras relacionar.
+
+
 ![Seleecionar la propiedad que quieras relacionar](img/Propiedades_Dependientes.png "Seleecionar la propiedad que quieras relacionar")
 + En el campo "SQL para desplegable" vamos a introducir la query para relacionar las dos propiedades y rellenar el desplegable.
 ![Query de la Propiedad Dependiente](img/Query_Propiedad_Dependiente.png "Query de la Propiedad Dependiente")
-
 
 ###### 4. Configurar las propiedades dependientes. 
 Si queremos que las propiedades dependientes no se puedan utilizar o no se muestren cuando cargamos la página podemos hacer lo seiguiente:
