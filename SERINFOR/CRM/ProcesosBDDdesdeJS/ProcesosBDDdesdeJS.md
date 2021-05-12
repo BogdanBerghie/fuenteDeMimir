@@ -1,5 +1,5 @@
-# Llamadas a Procesos de BDD almacenados en FlexyGo desde JS
-Si tenemos un proceso de BDD creado en FlexyGo, podemos realizar una llamada desde JS para poder ejecutarlo. Para ello llamaremos a la funcion **flexygo.nav.execProccess**
+# Llamadas a Procesos de BBDD almacenados en FlexyGo desde JS
+Si tenemos un proceso de BBDD creado en FlexyGo, podemos realizar una llamada desde JS para poder ejecutarlo. Para ello llamaremos a la funcion **flexygo.nav.execProccess**
 
 
 Estos son sus parametros: 
