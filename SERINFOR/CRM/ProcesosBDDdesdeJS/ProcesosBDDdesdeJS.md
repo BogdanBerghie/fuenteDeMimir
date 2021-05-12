@@ -15,4 +15,4 @@ Estos son los parámetros más relevantes.
 [{'Key':'nombredelparametro','Value':tuvalor}, {'Key':'nombredelparametro2','Value':tuvalor2},{'Key':'nombredelparametro3','Value':tuvalor3}]
 
 Para los demás valores, tomar la siguiente ejecuccion como referencia:
-**flexygo.nav.execProcess('prueba_procedure_',null,null,null,[{'Key':'IdOferta','Value':1}, {'Key':'IdLinea','Value':1},{'Key':'orden','Value':50}], null, false, $(this), null);**
+**flexygo.nav.execProcess('prueba_procedure_',null,null,null,[{'Key':'IdOferta','Value':1}, {'Key':'IdLinea','Value':1},{'Key':'orden','Value':50}], null, false, $(this), null,false);**
