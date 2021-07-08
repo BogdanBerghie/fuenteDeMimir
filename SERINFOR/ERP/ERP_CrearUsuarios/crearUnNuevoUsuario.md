@@ -6,7 +6,7 @@
 
 1. Para llegar a *gestión de empleados* hay que abrir el panel lateral y seguir esta "ruta" Administración>Configuración>Asistente de configuración de empresa
 
-![Priera foto](img/Screenshot_1.png)
+![Priera foto](img/Screenshot_1.png "1")
 
 2. Nos aparecerá una pantalla con todas las configuraciónes de *Ahora ERP* en este caso que queremos crear un nevo usuario iremos a *Gestión de seguridad* y elegiremos *Gestión de empleados* 
 
